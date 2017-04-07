@@ -13,3 +13,11 @@ dependencies:
 test:
   override:
     - exit 0
+
+
+deployment:
+  hub:
+    branch: master
+    commands:
+      - docker login -u $DOCKER_USER -p $DOCKER_PASS
+      - docker push kontotto/circleci
